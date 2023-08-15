@@ -40,7 +40,7 @@ function game() {
     let playerScore = 0;
     let computerScore = 0;
 
-    for (let round = 1; round <= 5; round++) {
+    while (playerScore < 5 && computerScore < 5) {
         const playerSelection = prompt(`Round ${round}: Enter your choice(rock, paper, or scissors)`);
         const computerSelection = getComputerChoice();
 
@@ -73,4 +73,6 @@ function game() {
     console.log(gameResult);
 }
 
-game();
+game(); 
+
+// rewrite win condition to first to 5
