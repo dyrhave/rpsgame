@@ -18,3 +18,42 @@ h1 {
 }
 
 
+.choice {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #3caf50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+
+.choice:hover {
+    background-color: #45a049;
+}
+
+
+.result {
+    margin-top: 20px;
+}
+
+
+#round-result {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+}
+
+
+.score {
+    margin-top: 20px;
+}
+
+
+#player-score, #computer-score {
+    font-size: 16px;
+    margin: 5px 0;
+    color: #333;
+}
