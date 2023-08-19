@@ -24,9 +24,8 @@ function resetGame() {
     document.getElementById("playerSign").innerHTML = `<img src="images/question.png">`;
     document.getElementById("computerSign").innerHTML = `<img src="images/question.png">`;
     document.getElementById("round-result").textContent = "";
-    replayButton.style.display = "none"; // Hide the replay button
+    replayButton.style.display = "none"; 
 
-    // Enable the choice buttons
     choiceButtons.forEach(button => {
         button.disabled = false;
     });

@@ -75,14 +75,14 @@ h2, h3 {
 
 
 .signBg {
-    width: 150px; /* Adjust the size as needed */
-    height: 150px; /* Adjust the size as needed */
+    width: 150px; 
+    height: 150px; 
     background-color: #ffffcc;
-    border-radius: 20%; /* Makes it round */
+    border-radius: 20%; 
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto; /* Center horizontally */
+    margin: 0 auto; 
     position: relative;
     gap: 20px;
 }
@@ -131,7 +131,7 @@ h2, h3 {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
-    margin-top: 20px; /* Adjust margin as needed */
+    margin-top: 20px; 
     display: block;
     margin: 0 auto;
 }
