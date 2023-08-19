@@ -13,6 +13,26 @@ function getComputerChoice() {
 let playerScore = 0;
 let computerScore = 0;
 
+const replayButton = document.getElementById("replaybtn");
+replayButton.addEventListener("click", resetGame);
+
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    document.getElementById("player-score").textContent = `Player: ${playerScore}`;
+    document.getElementById("computer-score").textContent = `Computer: ${computerScore}`;
+    document.getElementById("playerSign").innerHTML = `<img src="images/question.png">`;
+    document.getElementById("computerSign").innerHTML = `<img src="images/question.png">`;
+    document.getElementById("round-result").textContent = "";
+    replayButton.style.display = "none"; // Hide the replay button
+
+    // Enable the choice buttons
+    choiceButtons.forEach(button => {
+        button.disabled = false;
+    });
+}
+
+
 function updateScore(result) {
     if (result.includes("win")) {
         playerScore++;
@@ -20,13 +40,15 @@ function updateScore(result) {
         computerScore++;
     }
 
-    document.getElementById("player-score").textContent = `Player: ${playerScore}`
-    document.getElementById("computer-score").textContent = `Computer: ${computerScore}`
+    document.getElementById("player-score").textContent = `Player: ${playerScore}`;
+    document.getElementById("computer-score").textContent = `Computer: ${computerScore}`;
 
     if (playerScore === 5 || computerScore === 5) {
         displayWinner();
+        replayButton.style.display = "block";
     }
 }
+
 
 function determineWinner(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
@@ -59,6 +81,7 @@ function displayWinner() {
     }
 
     document.getElementById("round-result").textContent = finalResult;
+    replayButton.style.display = "block";
 
     choiceButtons.forEach(button => {
         button.disabled = true;
@@ -73,8 +96,17 @@ choiceButtons.forEach(button => {
 function playRound(playerSelection) {
     const computerSelection = getComputerChoice();
 
-    document.getElementById("player-choice").textContent = `Player: ${playerSelection}`;
-    document.getElementById("computer-choice").textContent = `Computer: ${computerSelection}`;
+    const playerSignElement = document.getElementById("playerSign");
+    const computerSignElement = document.getElementById("computerSign");
+    applyAnimation(playerSignElement);
+    applyAnimation(computerSignElement);
+
+    choiceButtons.forEach(button => {
+        button.classList.remove("selected");
+    })
+    document.getElementById(playerSelection).classList.add("selected");
+    document.getElementById("playerSign").innerHTML = `<img src="images/${playerSelection}.png">`;
+    document.getElementById("computerSign").innerHTML = `<img src="images/${computerSelection}.png">`;
 
     const result = determineWinner(playerSelection, computerSelection);
 
@@ -87,3 +119,9 @@ function playRound(playerSelection) {
     }
 }
 
+function applyAnimation(element) {
+    element.classList.add("selected");
+    setTimeout(() => {
+        element.classList.remove("selected");
+    }, 300);
+}

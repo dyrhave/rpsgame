@@ -10,26 +10,32 @@
 <body>
     
 
-    <h1>Rock Paper Scissors</h1>
-    <h2>Pick your weapon of choice</h2>
-    <h3>Best of out 5 game</h3>
+    <h1>ROCK PAPER SCISSORS</h1>
+    
     
     <div class="gameboard">
+        <h2 id="result-info">Choose your weapon of choice</h2>
+        <h3 id="result-message">Best of out 5 game</h3>
         <div class="signbox">
-            <div id="playerSign" class="sign">
-                <img src="images/question.png">
+            <div class="signBg">
+                <div id="playerSign" class="sign">
+                    <img src="images/question.png">
+                </div>
             </div>
-            <p id="player-score">Player: 0</p>
-        </div>
-        <div class="signbox">
-            <div id="computerSign" class="sign">
-                <img src="images/question.png">
+            <div class="signBg">
+                <div id="computerSign" class="sign">
+                    <img src="images/question.png">
+                </div>
             </div>
-            <p id="computer-score">Computer: 0</p>
         </div>
+    </div>
+    <div class="score">
+        <p id="player-score">Player: 0</p>
+        <p id="computer-score">Computer: 0</p>
     </div>
     <div class="result">
         <p id="round-result"></p>
+        <button id="replaybtn" style="display: none;">Play Again?</button>
     </div>
         
         
@@ -37,17 +43,17 @@
     <div class="choices-container">
         <button type="button" class="choice" id="rock">
             <div class="sign">
-                <img src="images/fist.png">
+                <img src="images/rock.png">
             </div>
         </button>
         <button type="button" class="choice" id="paper">
             <div class="sign">
-                <img src="images/four-fingers.png">
+                <img src="images/paper.png">
             </div>
         </button>
         <button type="button" class="choice" id="scissors">
             <div class="sign">
-                <img src="images/peace.png">
+                <img src="images/scissors.png">
             </div>
         </button>
     </div>
